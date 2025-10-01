@@ -63,10 +63,6 @@ public class ShellEscaper extends Escaper {
     }
   }
 
-  public static String escapeString(String unescaped) {
-    return INSTANCE.escape(unescaped);
-  }
-
   public static String escapeStringUtf8(byte[] unescaped) {
     return INSTANCE.escape(new String(unescaped.getBytes(UTF_8)));
   }
