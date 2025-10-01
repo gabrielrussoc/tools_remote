@@ -67,6 +67,10 @@ public class ShellEscaper extends Escaper {
     return INSTANCE.escape(unescaped);
   }
 
+  public static String escapeStringUtf8(byte[] unescaped) {
+    return INSTANCE.escape(new String(unescaped.getBytes(UTF_8)));
+  }
+
   /**
    * Returns a string containing the argument strings in the given list escaped and joined by
    * spaces.
