@@ -160,7 +160,7 @@ public class RemoteClient {
   // Outputs a bash executable line that corresponds to executing the given command.
   private static void printCommand(Command command) {
     for (EnvironmentVariable var : command.getEnvironmentVariablesList()) {
-      System.out.printf("%s=%s \\\n", var.getName(), ShellEscaper.escapeString(var.getValue()));
+      System.out.printf("%s=%s \\\n", var.getName(), ShellEscaper.escapeStringUtf8(var.getValue().getBytes(UTF_8)));
     }
     System.out.print("  ");
 
